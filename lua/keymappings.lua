@@ -43,3 +43,7 @@ vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>', options)
 
+
+-- format
+vim.api.nvim_set_keymap('n', '<leader>nf', ':Neoformat<CR>', options)
+

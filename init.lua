@@ -22,3 +22,6 @@ require('lualine').setup {
 
 -- Initialize LSP
 require('lspconfig')
+
+-- nvim-cmp
+require('nvim-cmp')
