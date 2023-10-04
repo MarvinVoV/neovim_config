@@ -42,8 +42,19 @@ vim.api.nvim_set_keymap('n', '<Leader>ff', ':Telescope find_files<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>fg', ':Telescope live_grep<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>fb', ':Telescope buffers<CR>', options)
 vim.api.nvim_set_keymap('n', '<leader>fh', ':Telescope help_tags<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>gf', ':Telescope git_files<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>sw', ':Telescope grep_string<CR>', options)
+vim.api.nvim_set_keymap('n', '<Leader>?', ':Telescope oldfiles<CR>', options)
 
 
 -- format
 vim.api.nvim_set_keymap('n', '<leader>nf', ':Neoformat<CR>', options)
 
+-- todo comments
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })

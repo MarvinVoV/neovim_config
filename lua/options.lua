@@ -18,6 +18,8 @@ vim.opt.expandtab = true
 -- Enable line numbers
 vim.opt.number = true
 
+
+
 -- Enable relative line numbers (optional)
 vim.opt.relativenumber = false
 
@@ -31,7 +33,9 @@ vim.cmd('syntax enable')
 vim.opt.statusline = '%l:%c'
 
 -- Enable line highlighting
- vim.opt.cursorline = false
+ vim.opt.cursorline = true
+
+ vim.opt.cursorlineopt = 'number'
 
 -- Highlight search results as you type
 vim.opt.incsearch = true
@@ -66,4 +70,13 @@ vim.opt.list = true
 
 
 
-
+-- [[ Highlight on yank ]]
+-- See `:help vim.highlight.on_yank()`
+local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+  group = highlight_group,
+  pattern = '*',
+})
