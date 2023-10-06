@@ -147,36 +147,6 @@ return require("packer").startup(function(use)
         end,
     })
 
-    -- neoformat
-    use({
-        "sbdchd/neoformat",
-        config = function()
-            vim.g.neoformat_basic_format_align = 1
-            vim.g.neoformat_basic_format_retab = 1
-            vim.g.neoformat_basic_format_trim = 1
-
-            vim.g.neoformat_enabled_python = "autopep8"
-
-            vim.g.neoformat_java_google = {
-                exe = "google-java-format",
-                args = {},
-                replace = 1,
-                stdin = 1,
-                stdout = 0,
-                sync = 1,
-            }
-
-            vim.g.neoformat_lua_stylua = {
-                exe = "stylua",
-                args = {},
-                replace = 1,
-                stdin = 1,
-                stdout = 0,
-                sync = 1,
-            }
-        end,
-    })
-
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -1,5 +1,5 @@
 -- Leader key
-vim.g.mapleader = ',' 
+vim.g.mapleader = ','
 
 local options = {
     noremap = true,
@@ -47,14 +47,12 @@ vim.api.nvim_set_keymap('n', '<Leader>sw', ':Telescope grep_string<CR>', options
 vim.api.nvim_set_keymap('n', '<Leader>?', ':Telescope oldfiles<CR>', options)
 
 
--- format
-vim.api.nvim_set_keymap('n', '<leader>nf', ':Neoformat<CR>', options)
 
 -- todo comments
 vim.keymap.set("n", "]t", function()
-  require("todo-comments").jump_next()
+    require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
 
 vim.keymap.set("n", "[t", function()
-  require("todo-comments").jump_prev()
+    require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
