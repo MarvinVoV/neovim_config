@@ -16,24 +16,25 @@ local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
+    -- Plugin for git
     use("tpope/vim-fugitive")
-    use("bluz71/vim-nightfly-guicolors")
+
+    -- Lua function
     use("nvim-lua/plenary.nvim")
     use("kyazdani42/nvim-web-devicons")
+
+    -- Mason
     use({
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     })
 
+    -- Theme
+    use { "catppuccin/nvim", as = "catppuccin" }
+
     -- Toggle term
-    use {
-        "akinsho/toggleterm.nvim",
-        tag = '*',
-        config = function()
-            require("toggleterm").setup()
-        end
-    }
+    use { "akinsho/toggleterm.nvim", tag = '*' }
 
     -- bufferline
     use({
@@ -43,12 +44,7 @@ return require("packer").startup(function(use)
     })
 
     -- leap
-    use({
-        "ggandor/leap.nvim",
-        config = function()
-            require("leap").set_default_keymaps()
-        end,
-    })
+    use({ "ggandor/leap.nvim" })
 
     -- autocompletion
     use("hrsh7th/nvim-cmp")   -- completion plugin
@@ -69,31 +65,19 @@ return require("packer").startup(function(use)
     -- Telescope
     use({
         "nvim-telescope/telescope.nvim",
-        tag = "0.1.3",
         branch = "0.1.x",
         requires = {
             { "nvim-lua/plenary.nvim" },
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                -- NOTE: If you are having trouble with this installation,
-                --       refer to the README for telescope-fzf-native for more instructions.
-                build = "make",
-                cond = function()
-                    return vim.fn.executable("make") == 1
-                end,
-            },
         },
     })
+
+    -- Comment
+    use { "numToStr/Comment.nvim" }
 
     -- nvim-tree
     use({
         "nvim-tree/nvim-tree.lua",
         requires = { "nvim-tree/nvim-web-devicons", opt = true },
-        config = function()
-            require("nvim-tree").setup({
-                -- configuration
-            })
-        end,
     })
 
     -- lualine
@@ -103,49 +87,23 @@ return require("packer").startup(function(use)
     })
 
     -- indent-blankline
-    use({
-        "lukas-reineke/indent-blankline.nvim",
-    })
+    use({ "lukas-reineke/indent-blankline.nvim" })
 
-    -- Comment
-    use({
-        "numToStr/Comment.nvim",
-        config = function()
-            require("Comment").setup()
-        end,
-    })
 
     -- todo-coments
     use({
         "folke/todo-comments.nvim",
         requires = { "nvim-lua/plenary.nvim" },
-        config = function()
-            require('todo-comments').setup()
-        end,
     })
 
     -- autopairs
-    use({
-        "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup()
-        end,
-    })
+    use({ "windwp/nvim-autopairs" })
+
+    -- Formatter
+    use({ "mhartington/formatter.nvim" })
 
     -- Which-key
-    use({
-        "folke/which-key.nvim",
-        config = function()
-            vim.o.timeout = true
-            vim.o.timeoutlen = 300
-            require("which-key").setup({
-                triggers_blacklist = {
-                    i = { "c", "'", "<c-s>", "j", "k" },
-                    v = { "j", "k" },
-                },
-            })
-        end,
-    })
+    use({ "folke/which-key.nvim" })
 
 
     -- Automatically set up your configuration after cloning packer.nvim

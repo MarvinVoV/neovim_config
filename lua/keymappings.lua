@@ -17,7 +17,6 @@ vim.api.nvim_set_keymap('n', '<Leader>r', ':e<CR>', options)
 
 -- Open a new tab with <leader>t
 vim.api.nvim_set_keymap('n', '<Leader>t', ':tabnew<CR>', options)
-
 -- Move between tabs with <leader>h and <leader>l
 vim.api.nvim_set_keymap('n', '<Leader>h', ':tabprev<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>l', ':tabnext<CR>', options)
@@ -26,11 +25,13 @@ vim.api.nvim_set_keymap('n', '<Leader>l', ':tabnext<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>L', ':set relativenumber!<CR>', options)
 
 -- Resize windows with <C-h>, <C-j>, <C-k>, <C-l>
-vim.api.nvim_set_keymap('n', '<C-h>', ':resize -2<CR>', options)
-vim.api.nvim_set_keymap('n', '<C-j>', ':resize +2<CR>', options)
-vim.api.nvim_set_keymap('n', '<C-k>', ':vertical resize -2<CR>', options)
-vim.api.nvim_set_keymap('n', '<C-l>', ':vertical resize +2<CR>', options)
+-- vim.api.nvim_set_keymap('n', '<C-h>', ':resize -2<CR>', options)
+-- vim.api.nvim_set_keymap('n', '<C-j>', ':resize +2<CR>', options)
+-- vim.api.nvim_set_keymap('n', '<C-k>', ':vertical resize -2<CR>', options)
+-- vim.api.nvim_set_keymap('n', '<C-l>', ':vertical resize +2<CR>', options)
 
+-- Formatter
+vim.api.nvim_set_keymap('n', '<Leader>fd', ':Format<CR>', options)
 
 -- Nvim-tree  See :help nvim-tree-commands
 vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeToggle<CR>', options)

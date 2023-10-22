@@ -1,9 +1,9 @@
 config = require('toggleterm')
 
 config.setup({
-    size = 20,
-    open_mapping = [[<c-\>]],
-    direction = 'float',
+    size = 15,
+    open_mapping = [[<C-\>]],
+    direction = 'horizontal',
     close_on_exit = true,
     shell = vim.o.shell,
     persist_size = true,
@@ -12,14 +12,8 @@ config.setup({
     hide_numbers = true,
     shade_filetypes = {},
     insert_mappings = true,
-    float_opts = {
-        border = 'curved',
-        winblend = 0,
-        highlights = {
-            border = 'Normal',
-            background = 'Normal',
-        }
-    }
+    auto_scroll = true,
+    
 })
 
 function _G.set_terminal_keymaps()
@@ -33,13 +27,12 @@ function _G.set_terminal_keymaps()
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+-- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+-- local Terminal = require('toggleterm.terminal').Terminal
+-- local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true })
 
-local Terminal = require('toggleterm.terminal').Terminal
-local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true })
+-- function _lazygit_toggle()
+--     lazygit:toggle()
+-- end
 
-function _lazygit_toggle()
-    lazygit:toggle()
-end
-
-vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", { noremap = true, silent = true })

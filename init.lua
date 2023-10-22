@@ -4,43 +4,45 @@ require('options')
 -- Load key mappings
 require('keymappings')
 
--- Load and run plugin configuration
-require('plugins')
-
 -- Load colorscheme
 require('themes')
 
 -- Load autocommands
 require('autocommands')
 
--- Initialize lualine
-require('lualine').setup {
-    options = {
-        theme = 'auto'
-    },
-}
+-- Load and run plugin configuration
+require('plugin-config')
 
+-------- Plugins Start ---------------
+-- Mason
+require('plugins.mason')
 -- Initialize LSP
-require('lsp-config')
-
+require('plugins.lsp-config')
+-- nvim-tree
+require('plugins.nvim-tree')
 -- nvim-cmp
-require('nvim-cmp')
-
-
--- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
-
-
---Initialize BufferLine
-require('bufferline').setup{}
-
-
--- Toggleterm
-require('toggle-term')
-
+require('plugins.nvim-cmp')
+-- autopairs
+require('plugins.autopairs')
+-- toggleterm
+require('plugins.toggleterm')
+-- comment
+require('plugins.comment')
+-- todo comments
+require('plugins.todo-comments')
+-- which-key
+require('plugins.which-key')
+-- bufferline
+require('plugins.bufferline')
 -- indent-blankline
-require('ibl').setup()
+require('plugins.indent-blankline')
+-- lualine
+require('plugins.lualine')
+-- nvim-treesitter
+require('plugins.treesitter')
+-- leap
+require('plugins.leap')
 
-
+-------- Plugins End ---------------
 
 
