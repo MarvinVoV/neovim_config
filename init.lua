@@ -14,9 +14,7 @@ require('autocommands')
 require('plugin-config')
 
 -------- Plugins Start ---------------
--- Mason
-require('plugins.mason')
--- Initialize LSP
+-- mason lsp
 require('plugins.lsp-config')
 -- nvim-tree
 require('plugins.nvim-tree')
