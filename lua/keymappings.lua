@@ -25,7 +25,8 @@ vim.api.nvim_set_keymap('n', '<Leader>l', ':tabnext<CR>', options)
 vim.api.nvim_set_keymap('n', '<Leader>L', ':set relativenumber!<CR>', options)
 
 -- Resize windows with <C-h>, <C-j>, <C-k>, <C-l>
--- vim.api.nvim_set_keymap('n', '<C-h>', ':resize -2<CR>', options)
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', options)
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', options)
 -- vim.api.nvim_set_keymap('n', '<C-j>', ':resize +2<CR>', options)
 -- vim.api.nvim_set_keymap('n', '<C-k>', ':vertical resize -2<CR>', options)
 -- vim.api.nvim_set_keymap('n', '<C-l>', ':vertical resize +2<CR>', options)

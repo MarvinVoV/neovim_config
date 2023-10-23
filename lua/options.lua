@@ -35,7 +35,7 @@ vim.opt.statusline = '%l:%c'
 -- Enable line highlighting
  vim.opt.cursorline = true
 
- vim.opt.cursorlineopt = 'number'
+ vim.opt.cursorlineopt = 'both'
 
 -- Highlight search results as you type
 vim.opt.incsearch = true
