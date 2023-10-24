@@ -14,6 +14,8 @@ require('autocommands')
 require('plugin-config')
 
 -------- Plugins Start ---------------
+-- dashboard
+require('plugins.alpha')
 -- mason lsp
 require('plugins.lsp-config')
 -- nvim-tree
@@ -40,7 +42,8 @@ require('plugins.lualine')
 require('plugins.treesitter')
 -- leap
 require('plugins.leap')
-
+-- telescope
+require('plugins.leap')
 -------- Plugins End ---------------
 
 
