@@ -58,3 +58,8 @@ end, { desc = "Next todo comment" })
 vim.keymap.set("n", "[t", function()
     require("todo-comments").jump_prev()
 end, { desc = "Previous todo comment" })
+
+
+
+-- Execute the current Python buffer
+vim.api.nvim_set_keymap('n', '<F9>', ':w<CR>:term python %<CR>', options)
