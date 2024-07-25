@@ -111,6 +111,18 @@ return require("packer").startup(function(use)
     -- alpha-nvim
     use { 'goolord/alpha-nvim' }
 
+    -- noice
+    use {
+        "folke/noice.nvim",
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        }
+
+    }
+    -- diffview
+    use { "sindrets/diffview.nvim" }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

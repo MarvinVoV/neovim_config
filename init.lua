@@ -44,6 +44,10 @@ require('plugins.treesitter')
 require('plugins.leap')
 -- telescope
 require('plugins.leap')
+-- noice
+require('plugins.noice')
+-- diffview
+require('plugins.diffview')
 -------- Plugins End ---------------
 
 
